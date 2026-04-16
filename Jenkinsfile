@@ -22,10 +22,12 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {  
-                    buildImage 'miguelprint/demo-app:jma-3.0'     
+                    buildImage 'miguelprint/demo-app:jma-3.0'
+                    dockerLogin()
+                    dockerPush 'miguelprint/demo-app:jma-3.0'
                 }
             }
         }
