@@ -52,7 +52,7 @@ pipeline {
 
         stage('commit version update') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'gitlab-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
                     sh '''
                         git config user.email "jenkins@example.com"
                         git config user.name "jenkins"
