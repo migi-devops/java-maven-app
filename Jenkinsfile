@@ -23,6 +23,7 @@ pipeline {
             steps {
                 script {
                     echo 'building the application...'
+                    echo 'this is a test'
                     sh 'mvn clean package'
                 }
             }
