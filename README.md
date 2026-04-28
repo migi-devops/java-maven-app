@@ -4,7 +4,7 @@ Recreated from TechWorld with Nana DevOps Bootcamp
 
 Original reference: https://gitlab.com/twn-devops-bootcamp/latest/08-ci-cd/java-maven-app
 
-#### 📌 Project Overview
+### 📌 Project Overview
 
 This project demonstrates a fully automated CI/CD pipeline using Jenkins to build, version, and containerize a Java application.
 
@@ -16,7 +16,7 @@ The pipeline is triggered by GitHub changes and performs:
 - Image tagging for traceability
 - (Optional) Push to Docker Hub
 
-#### 🎯 Goal
+### 🎯 Goal
 
 The goal of this project is to:
 
@@ -26,11 +26,11 @@ The goal of this project is to:
 - Containerize the application using Docker
 - Understand real-world DevOps troubleshooting (Git, Jenkins, credentials, disk issues)
 
-#### 🏗️ Architecture
+### 🏗️ Architecture
 
 `GitHub → Webhook → Jenkins Pipeline → Maven Build → Docker Build → (Docker Hub)`
 
-#### ⚙️ Tech Stack
+### ⚙️ Tech Stack
 
 | Area | Technologies |
 |------|--------------|
@@ -41,7 +41,7 @@ The goal of this project is to:
 | Source Control | GitHub |
 | IDE | Visual Studio Code |
 
-#### 📂 Repository Structure
+### 📂 Repository Structure
 
 ```
 java-maven-app/
@@ -53,7 +53,7 @@ java-maven-app/
 └── README.md                # Project documentation
 ```
 
-#### 🔄 CI/CD Pipeline Breakdown
+### 🔄 CI/CD Pipeline Breakdown
 
 #### 1. Increment Version
 - Uses Maven plugin:
@@ -83,21 +83,16 @@ Example: `1.1.2-98`
 - Pushes image to Docker Hub
 - Uses Jenkins credentials for authentication
 
-#### 🔑 Key Features
+### 🔑 Key Features
 
-✅ Automated CI/CD pipeline using Jenkins
+- Automated CI/CD pipeline using Jenkins
+- Dynamic versioning for every build
+- Docker image creation with unique tags
+- GitHub webhook integration (auto-trigger builds)
+- Pipeline-as-Code using Jenkinsfile
+- Real-world DevOps debugging experience
 
-✅ Dynamic versioning for every build
-
-✅ Docker image creation with unique tags
-
-✅ GitHub webhook integration (auto-trigger builds)
-
-✅ Pipeline-as-Code using Jenkinsfile
-
-✅ Real-world DevOps debugging experience
-
-#### 🧪 Real-World Challenges & Fixes
+### 🧪 Real-World Challenges & Fixes
 
 #### ❌ Issue: Jenkins build failure due to invalid token
 
@@ -127,14 +122,14 @@ Error: `Disk space below threshold`
 - Deleted old builds
 - Ran Docker cleanup: `docker system prune -af`
 
-#### 🚀 How to Run the Project
+### 🚀 How to Run the Project
 
 1. Clone Repository
 
 `git clone https://github.com/migi-devops/java-maven-app.git
 cd java-maven-app`
 
-3. Configure Jenkins
+2. Configure Jenkins
 
 - Create a Multibranch Pipeline
 - Connect GitHub repository
@@ -145,7 +140,7 @@ cd java-maven-app`
 - Push code to repository OR
 - Trigger manually in Jenkins
 
-#### 📊 What I Built
+### 📊 What I Built
 
 I created a CI/CD pipeline that:
 
@@ -155,7 +150,7 @@ I created a CI/CD pipeline that:
 - Tags images for traceability
 - Integrates GitHub with Jenkins using webhooks
 
-#### 📌 Project Summary (In a Nutshell)
+### 📌 Project Summary (In a Nutshell)
 
 This project demonstrates a real-world CI/CD pipeline using Jenkins that automates building, versioning, and containerizing a Java application.
 
