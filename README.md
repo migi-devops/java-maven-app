@@ -32,12 +32,14 @@ The goal of this project is to:
 
 #### ⚙️ Tech Stack
 
-- CI/CD: Jenkins
-- Build Tool: Apache Maven
-- Language: Java
-- Containerization: Docker
-- Source Control: GitHub
-- IDE: Visual Studio Code
+| Area | Technologies |
+|------|--------------|
+| CI/CD | Jenkins |
+| Build Tool | Apache Maven |
+| Language | Java |
+| Containerization | Docker |
+| Source Control | GitHub |
+| IDE | Visual Studio Code |
 
 #### 📂 Repository Structure
 
@@ -53,5 +55,130 @@ java-maven-app/
 
 #### 🔄 CI/CD Pipeline Breakdown
 
-1. Increment Version
+#### 1. Increment Version
 - Uses Maven plugin:
+
+```
+build-helper:parse-version
+versions:set
+```
+
+- Automatically increments version on every pipeline run
+- Ensures consistent and traceable builds
+
+#### 2. Build Application
+
+- Compiles Java code
+- Runs tests
+- Packages application into a `.jar` file
+
+#### 3. Build Docker Image
+
+- Uses Dockerfile based on: `amazoncorretto:17-alpine-jdk`
+- Creates versioned image: `<version>-<build-number>`
+Example: `1.1.2-98`
+
+#### 4. Push Docker Image (Optional)
+
+- Pushes image to Docker Hub
+- Uses Jenkins credentials for authentication
+
+#### 🔑 Key Features
+
+✅ Automated CI/CD pipeline using Jenkins
+
+✅ Dynamic versioning for every build
+
+✅ Docker image creation with unique tags
+
+✅ GitHub webhook integration (auto-trigger builds)
+
+✅ Pipeline-as-Code using Jenkinsfile
+
+✅ Real-world DevOps debugging experience
+
+#### 🧪 Real-World Challenges & Fixes
+
+#### ❌ Issue: Jenkins build failure due to invalid token
+
+Error: `Invalid username or token`
+
+✅ Fix:
+
+- Created new GitHub Personal Access Token (PAT)
+- Updated Jenkins credentials
+
+#### ❌ Issue: Jenkinsfile syntax error
+
+Error: `unexpected char: '#'`
+
+#### ✅ Fix:
+
+- Removed invalid Groovy syntax
+- Ensured proper Jenkinsfile formatting
+
+#### ❌ Issue: Disk space warning on Jenkins server
+
+Error: `Disk space below threshold`
+
+#### ✅ Fix:
+
+- Cleaned workspace
+- Deleted old builds
+- Ran Docker cleanup: `docker system prune -af`
+
+#### 🚀 How to Run the Project
+
+1. Clone Repository
+
+`git clone https://github.com/migi-devops/java-maven-app.git
+cd java-maven-app`
+
+3. Configure Jenkins
+
+- Create a Multibranch Pipeline
+- Connect GitHub repository
+- Add credentials: GitHub PAT and Docker Hub (optional)
+
+3. Trigger Pipeline
+
+- Push code to repository OR
+- Trigger manually in Jenkins
+
+#### 📊 What I Built
+
+I created a CI/CD pipeline that:
+
+- Automatically builds a Java application
+- Increments version on every run
+- Packages the app into a Docker image
+- Tags images for traceability
+- Integrates GitHub with Jenkins using webhooks
+
+#### 📌 Project Summary (In a Nutshell)
+
+This project demonstrates a real-world CI/CD pipeline using Jenkins that automates building, versioning, and containerizing a Java application.
+
+It highlights core DevOps practices:
+
+- CI/CD automation
+- Pipeline as Code
+- Version control integration
+- Containerization
+- Troubleshooting production-like issues
+
+#### 🔮 Next Improvements (Roadmap)
+
+- Push images to AWS ECR
+- Deploy to Kubernetes (EKS)
+- Use Jenkins Shared Library
+- Add automated testing stages
+- Implement monitoring & logging
+
+#### 👨‍💻 Author 
+#### Miguel
+DevOps Engineer
+
+#### ⭐ Final Note
+
+This is my first DevOps capstone project, focused on mastering CI/CD fundamentals before moving into cloud-native deployments.
