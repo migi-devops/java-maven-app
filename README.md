@@ -124,18 +124,18 @@ Error: `Disk space below threshold`
 
 ### 🚀 How to Run the Project
 
-1. Clone Repository
+#### 1. Clone Repository
 
 `git clone https://github.com/migi-devops/java-maven-app.git
 cd java-maven-app`
 
-2. Configure Jenkins
+#### 2. Configure Jenkins
 
 - Create a Multibranch Pipeline
 - Connect GitHub repository
 - Add credentials: GitHub PAT and Docker Hub (optional)
 
-3. Trigger Pipeline
+#### 3. Trigger Pipeline
 
 - Push code to repository OR
 - Trigger manually in Jenkins
