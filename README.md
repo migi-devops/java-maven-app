@@ -173,6 +173,5 @@ It highlights core DevOps practices:
 - Add automated testing stages
 - Implement monitoring & logging
 
-#### 👨‍💻 Author 
-#### Miguel (DevOps Engineer)
-#### Reference: TechWorld with Nana DevOps Bootcamp
+#### Author: Miguel (DevOps Engineer)
+#### Reference: [TechWorld with Nana DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp)
