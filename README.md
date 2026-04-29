@@ -90,6 +90,41 @@ Example: `1.1.2-98`
 
 ### 🧪 Real-World Challenges & Fixes
 
+#### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
+
+#### 👉 Impact:
+
+- Multiple builds triggered back-to-back
+- Jenkins node disk space rapidly consumed
+- Dozens of Docker images pushed unnecessarily
+- Risk of pipeline instability and resource exhaustion
+
+This is the kind of issue that can quietly escalate in production and increase infrastructure cost.
+
+#### 🔍 Root Cause:
+
+The pipeline was triggering itself repeatedly due to a misconfiguration between:
+
+- GitHub webhook triggers
+- Jenkins pipeline behavior (commit/push inside pipeline)
+
+#### ✅ Fix:
+
+- Identified recursive trigger pattern
+- Adjusted pipeline logic to prevent self-triggering
+- Cleaned up Jenkins workspace and old builds
+- Removed unused Docker images
+
+#### 💡 DevOps Insight:
+
+CI/CD pipelines must be designed to avoid recursive execution.
+
+In production environments, this can lead to:
+
+- Uncontrolled infrastructure usage
+- Increased cloud costs (compute + storage)
+- System instability
+
 #### ❌ Issue: Jenkins build failure due to invalid token
 
 Error: `Invalid username or token`
@@ -98,25 +133,6 @@ Error: `Invalid username or token`
 
 - Created new GitHub Personal Access Token (PAT)
 - Updated Jenkins credentials
-
-#### ❌ Issue: Jenkinsfile syntax error
-
-Error: `unexpected char: '#'`
-
-#### ✅ Fix:
-
-- Removed invalid Groovy syntax
-- Ensured proper Jenkinsfile formatting
-
-#### ❌ Issue: Disk space warning on Jenkins server
-
-Error: `Disk space below threshold`
-
-#### ✅ Fix:
-
-- Cleaned workspace
-- Deleted old builds
-- Ran Docker cleanup: `docker system prune -af`
 
 ### 🚀 How to Run the Project
 
