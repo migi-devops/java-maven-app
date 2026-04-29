@@ -88,7 +88,7 @@ Example: `1.1.2-98`
 - Pipeline-as-Code using Jenkinsfile
 - Real-world DevOps debugging experience
 
-### 🧪 Real-World Challenges & Fixes
+### 🧪 Real-World Challenge & Fixes
 
 #### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
 
@@ -124,15 +124,6 @@ In production environments, this can lead to:
 - Uncontrolled infrastructure usage
 - Increased cloud costs (compute + storage)
 - System instability
-
-#### ❌ Issue: Jenkins build failure due to invalid token
-
-Error: `Invalid username or token`
-
-✅ Fix:
-
-- Created new GitHub Personal Access Token (PAT)
-- Updated Jenkins credentials
 
 ### 🚀 How to Run the Project
 
