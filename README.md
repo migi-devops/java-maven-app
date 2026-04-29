@@ -88,6 +88,10 @@ Example: `1.1.2-98`
 - Pipeline-as-Code using Jenkinsfile
 - Real-world DevOps debugging experience
 
+Below is a successfull pipeline run showing all stages executing:
+
+![Jenkins Pipeline](assets/jenkins-stage-view.png)
+
 ### 🧪 Real-World Challenge & Fixes
 
 #### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
