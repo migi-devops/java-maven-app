@@ -1,9 +1,5 @@
 ### 🚀 Capstone Project 1 – CI/CD Pipeline with Jenkins, Maven & Docker
 
-Recreated from TechWorld with Nana DevOps Bootcamp
-
-Original reference: https://gitlab.com/twn-devops-bootcamp/latest/08-ci-cd/java-maven-app
-
 ### 📌 Project Overview
 
 This project demonstrates a fully automated CI/CD pipeline using Jenkins to build, version, and containerize a Java application.
@@ -171,9 +167,5 @@ It highlights core DevOps practices:
 - Implement monitoring & logging
 
 #### 👨‍💻 Author 
-#### Miguel
-DevOps Engineer
-
-#### ⭐ Final Note
-
-This is my first DevOps capstone project, focused on mastering CI/CD fundamentals before moving into cloud-native deployments.
+#### Miguel (DevOps Engineer)
+#### Reference: TechWorld with Nana DevOps Bootcamp
