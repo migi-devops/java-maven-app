@@ -196,4 +196,5 @@ It highlights core DevOps practices:
 - Implement monitoring & logging
 
 #### Author: Miguel (DevOps Engineer)
-#### Reference: [TechWorld with Nana DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp)
+#### Reference
+This project is based on concepts from the [TechWorld with Nana DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp), extended with additional debugging scenarios and real-world improvements.
