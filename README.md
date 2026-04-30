@@ -98,7 +98,7 @@ Example: `1.1.2-98`
 
 Below is a successful pipeline run showing all stages executing:
 
-<img src="assets/jenkins-stage-view.png" width="700">
+<img src="assets/jenkins-stage-view.png" width="600">
 
 #### 🧪 Real-World Challenges & Fixes
 
@@ -115,9 +115,9 @@ This is the kind of issue that can quietly escalate in production and increase i
 
 This shows multiple pipeline runs including failures and disk space failure:
 
-<img src="assets/loop-jenkins.png" alt="Build History" width="700">
+<img src="assets/loop-jenkins.png" alt="Build History" width="600">
 
-<img src="assets/node-full.png" alt="Disk Space Issue" width="700">
+<img src="assets/node-full.png" alt="Disk Space Issue" width="600">
 
 #### 🔍 Root Cause:
 
@@ -135,7 +135,7 @@ The pipeline was triggering itself repeatedly due to a misconfiguration between:
 
 Below shows cleaning up unused docker images:
 
-<img src="assets/prune-docker.png" alt="Clean Up Images" width="700">
+<img src="assets/prune-docker.png" alt="Clean Up Images" width="600">
 
 #### 💡 DevOps Insight:
 
