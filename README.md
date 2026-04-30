@@ -1,4 +1,4 @@
-### 🚀 Capstone Project 1 – CI/CD Pipeline with Jenkins, Maven & Docker
+### 🚀 CI/CD Pipeline with Jenkins — Debugging Real Pipeline Failures
 
 #### 📂 Repository Branches
 
@@ -20,19 +20,9 @@ The pipeline is triggered by GitHub changes and performs:
 - Image tagging for traceability
 - (Optional) Push to Docker Hub
 
-#### 🎯 Goal
-
-The goal of this project is to:
-
-- Automate the build process of a Java Maven application
-- Implement a CI/CD pipeline using Jenkins
-- Apply versioning strategy for traceable releases
-- Containerize the application using Docker
-- Understand real-world DevOps troubleshooting (Git, Jenkins, credentials, disk issues)
-
 #### 🏗️ Architecture
 
-`GitHub → Webhook → Jenkins Pipeline → Maven Build → Docker Build → (Docker Hub)`
+`GitHub → Webhook → Jenkins → Maven → Docker → (Future: AWS ECR → EKS)`
 
 #### ⚙️ Tech Stack
 
@@ -58,6 +48,8 @@ java-maven-app/
 ```
 
 #### 🔄 CI/CD Pipeline Breakdown
+
+This pipeline is designed to produce traceable, versioned Docker images on every commit while preventing recursive execution and ensuring build stability.
 
 **1. Increment Version**
 - Uses Maven plugin:
@@ -139,6 +131,16 @@ Below shows cleaning up unused docker images:
 
 #### 💡 DevOps Insight:
 
+#### ☁️ Cloud Perspective (AWS Alignment)
+
+Although this pipeline runs locally, the same design applies directly to AWS environments:
+
+- Jenkins can run on EC2 or be replaced with AWS CodePipeline
+- Docker images would be stored in Amazon ECR
+- Pipeline execution would integrate with IAM roles instead of static credentials
+
+This ensures the pipeline is cloud-ready and can scale beyond a local setup.
+
 CI/CD pipelines must be designed to avoid recursive execution.
 
 In production environments, this can lead to:
@@ -165,16 +167,6 @@ cd java-maven-app`
 - Push code to repository OR
 - Trigger manually in Jenkins
 
-#### 📊 What I Built
-
-I created a CI/CD pipeline that:
-
-- Automatically builds a Java application
-- Increments version on every run
-- Packages the app into a Docker image
-- Tags images for traceability
-- Integrates GitHub with Jenkins using webhooks
-
 #### 📌 Project Summary (In a Nutshell)
 
 This project demonstrates a real-world CI/CD pipeline using Jenkins that automates building, versioning, and containerizing a Java application.
@@ -197,4 +189,6 @@ It highlights core DevOps practices:
 
 **Author:** Miguel (DevOps Engineer)
 
-**Reference:** This project is based on concepts from the [TechWorld with Nana DevOps Bootcamp](https://www.techworld-with-nana.com/devops-bootcamp), extended with additional debugging scenarios and real-world improvements.
+**Learning Source:** TechWorld with Nana DevOps Bootcamp
+
+This implementation extends the original concepts by introducing additional debugging scenarios, pipeline safeguards, and production-style improvements.
