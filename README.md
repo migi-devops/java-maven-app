@@ -94,7 +94,7 @@ Below is a successfull pipeline run showing all stages executing:
 
 ### 🧪 Real-World Challenge & Fixes
 
-#### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
+### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
 
 #### 👉 Impact:
 
@@ -105,21 +105,31 @@ Below is a successfull pipeline run showing all stages executing:
 
 This is the kind of issue that can quietly escalate in production and increase infrastructure cost.
 
-#### 🔍 Root Cause:
+This shows multiple pipeline runs including failures and disk space failure:
+
+![Build History](assets/loop-jenkins.png)
+
+![Disk Space Issue](assets/node-full.png)
+
+### 🔍 Root Cause:
 
 The pipeline was triggering itself repeatedly due to a misconfiguration between:
 
 - GitHub webhook triggers
 - Jenkins pipeline behavior (commit/push inside pipeline)
 
-#### ✅ Fix:
+### ✅ Fix:
 
 - Identified recursive trigger pattern
 - Adjusted pipeline logic to prevent self-triggering
 - Cleaned up Jenkins workspace and old builds
 - Removed unused Docker images
 
-#### 💡 DevOps Insight:
+Below shows cleaning up unused docker images:
+
+![Clean Up Images](assets/prune-docker.png)
+
+### 💡 DevOps Insight:
 
 CI/CD pipelines must be designed to avoid recursive execution.
 
@@ -169,7 +179,7 @@ It highlights core DevOps practices:
 - Containerization
 - Troubleshooting production-like issues
 
-#### 🔮 Next Improvements (Roadmap)
+### 🔮 Next Improvements (Roadmap)
 
 - Push images to AWS ECR
 - Deploy to Kubernetes (EKS)
