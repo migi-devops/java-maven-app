@@ -59,7 +59,7 @@ java-maven-app/
 
 #### 🔄 CI/CD Pipeline Breakdown
 
-##### 1. Increment Version
+**1. Increment Version**
 - Uses Maven plugin:
 
 ```
@@ -70,19 +70,19 @@ versions:set
 - Automatically increments version on every pipeline run
 - Ensures consistent and traceable builds
 
-##### 2. Build Application
+**2. Build Application**
 
 - Compiles Java code
 - Runs tests
 - Packages application into a `.jar` file
 
-##### 3. Build Docker Image
+**3. Build Docker Image**
 
 - Uses Dockerfile based on: `amazoncorretto:17-alpine-jdk`
 - Creates versioned image: `<version>-<build-number>`
 Example: `1.1.2-98`
 
-##### 4. Push Docker Image (Optional)
+**4. Push Docker Image (Optional)**
 
 - Pushes image to Docker Hub
 - Uses Jenkins credentials for authentication
@@ -104,7 +104,7 @@ Below is a successful pipeline run showing all stages executing:
 
 ##### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
 
-👉 Impact:
+**👉 Impact:**
 
 - Multiple builds triggered back-to-back
 - Jenkins node disk space rapidly consumed
@@ -149,18 +149,18 @@ In production environments, this can lead to:
 
 #### 🚀 How to Run the Project
 
-##### 1. Clone Repository
+**1. Clone Repository**
 
 `git clone https://github.com/migi-devops/java-maven-app.git
 cd java-maven-app`
 
-##### 2. Configure Jenkins
+**2. Configure Jenkins**
 
 - Create a Multibranch Pipeline
 - Connect GitHub repository
 - Add credentials: GitHub PAT and Docker Hub (optional)
 
-##### 3. Trigger Pipeline
+**3. Trigger Pipeline**
 
 - Push code to repository OR
 - Trigger manually in Jenkins
