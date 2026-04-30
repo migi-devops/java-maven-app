@@ -92,7 +92,7 @@ Below is a successfull pipeline run showing all stages executing:
 
 ![Jenkins Pipeline](assets/jenkins-stage-view.png)
 
-### 🧪 Real-World Challenge & Fixes
+### 🧪 Real-World Challenges & Fixes
 
 ### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
 
