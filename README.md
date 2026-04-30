@@ -131,7 +131,15 @@ Below shows cleaning up unused docker images:
 
 #### 💡 DevOps Insight:
 
-#### ☁️ Cloud Perspective (AWS Alignment)
+CI/CD pipelines must be designed to avoid recursive execution.
+
+In production environments, this can lead to:
+
+- Uncontrolled infrastructure usage
+- Increased cloud costs (compute + storage)
+- System instability
+
+**☁️ Cloud Perspective (AWS Alignment)**
 
 Although this pipeline runs locally, the same design applies directly to AWS environments:
 
@@ -140,14 +148,6 @@ Although this pipeline runs locally, the same design applies directly to AWS env
 - Pipeline execution would integrate with IAM roles instead of static credentials
 
 This ensures the pipeline is cloud-ready and can scale beyond a local setup.
-
-CI/CD pipelines must be designed to avoid recursive execution.
-
-In production environments, this can lead to:
-
-- Uncontrolled infrastructure usage
-- Increased cloud costs (compute + storage)
-- System instability
 
 #### 🚀 How to Run the Project
 
