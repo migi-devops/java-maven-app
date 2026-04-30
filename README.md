@@ -1,8 +1,16 @@
 ### 🚀 Capstone Project 1 – CI/CD Pipeline with Jenkins, Maven & Docker
 
-### 📌 Project Overview
+#### 📂 Repository Branches
 
-This project demonstrates a fully automated CI/CD pipeline using Jenkins to build, version, and containerize a Java application.
+This project uses multiple branches to separate concerns:
+
+- jenkins-jobs: complete CI/CD pipeline implementation (Jenkinsfile + pipeline logic)
+- jenkins-shared-lib: jenkins shared library for reusable pipeline functions
+- master (default): documentation and project overview
+
+#### 📌 Project Overview
+
+This project demonstrates a production-style CI/CD pipeline that builds, versions, and containerizes a Java application using Jenkins — including real-world failure scenarios and fixes.
 
 The pipeline is triggered by GitHub changes and performs:
 
@@ -12,7 +20,7 @@ The pipeline is triggered by GitHub changes and performs:
 - Image tagging for traceability
 - (Optional) Push to Docker Hub
 
-### 🎯 Goal
+#### 🎯 Goal
 
 The goal of this project is to:
 
@@ -22,11 +30,11 @@ The goal of this project is to:
 - Containerize the application using Docker
 - Understand real-world DevOps troubleshooting (Git, Jenkins, credentials, disk issues)
 
-### 🏗️ Architecture
+#### 🏗️ Architecture
 
 `GitHub → Webhook → Jenkins Pipeline → Maven Build → Docker Build → (Docker Hub)`
 
-### ⚙️ Tech Stack
+#### ⚙️ Tech Stack
 
 | Area | Technologies |
 |------|--------------|
@@ -37,7 +45,7 @@ The goal of this project is to:
 | Source Control | GitHub |
 | IDE | Visual Studio Code |
 
-### 📂 Repository Structure
+#### 📂 Repository Structure
 
 ```
 java-maven-app/
@@ -49,9 +57,9 @@ java-maven-app/
 └── README.md                # Project documentation
 ```
 
-### 🔄 CI/CD Pipeline Breakdown
+#### 🔄 CI/CD Pipeline Breakdown
 
-#### 1. Increment Version
+##### 1. Increment Version
 - Uses Maven plugin:
 
 ```
@@ -62,24 +70,24 @@ versions:set
 - Automatically increments version on every pipeline run
 - Ensures consistent and traceable builds
 
-#### 2. Build Application
+##### 2. Build Application
 
 - Compiles Java code
 - Runs tests
 - Packages application into a `.jar` file
 
-#### 3. Build Docker Image
+##### 3. Build Docker Image
 
 - Uses Dockerfile based on: `amazoncorretto:17-alpine-jdk`
 - Creates versioned image: `<version>-<build-number>`
 Example: `1.1.2-98`
 
-#### 4. Push Docker Image (Optional)
+##### 4. Push Docker Image (Optional)
 
 - Pushes image to Docker Hub
 - Uses Jenkins credentials for authentication
 
-### 🔑 Key Features
+#### 🔑 Key Features
 
 - Automated CI/CD pipeline using Jenkins
 - Dynamic versioning for every build
@@ -92,11 +100,11 @@ Below is a successful pipeline run showing all stages executing:
 
 ![Jenkins Pipeline](assets/jenkins-stage-view.png)
 
-### 🧪 Real-World Challenges & Fixes
+#### 🧪 Real-World Challenges & Fixes
 
-### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
+##### ❌ Issue: CI/CD Pipeline Loop (Multiple Builds Triggering Continuously)
 
-#### 👉 Impact:
+👉 Impact:
 
 - Multiple builds triggered back-to-back
 - Jenkins node disk space rapidly consumed
@@ -111,14 +119,14 @@ This shows multiple pipeline runs including failures and disk space failure:
 
 ![Disk Space Issue](assets/node-full.png)
 
-### 🔍 Root Cause:
+#### 🔍 Root Cause:
 
 The pipeline was triggering itself repeatedly due to a misconfiguration between:
 
 - GitHub webhook triggers
 - Jenkins pipeline behavior (commit/push inside pipeline)
 
-### ✅ Fix:
+#### ✅ Fix:
 
 - Identified recursive trigger pattern
 - Adjusted pipeline logic to prevent self-triggering
@@ -129,7 +137,7 @@ Below shows cleaning up unused docker images:
 
 ![Clean Up Images](assets/prune-docker.png)
 
-### 💡 DevOps Insight:
+#### 💡 DevOps Insight:
 
 CI/CD pipelines must be designed to avoid recursive execution.
 
@@ -139,25 +147,25 @@ In production environments, this can lead to:
 - Increased cloud costs (compute + storage)
 - System instability
 
-### 🚀 How to Run the Project
+#### 🚀 How to Run the Project
 
-#### 1. Clone Repository
+##### 1. Clone Repository
 
 `git clone https://github.com/migi-devops/java-maven-app.git
 cd java-maven-app`
 
-#### 2. Configure Jenkins
+##### 2. Configure Jenkins
 
 - Create a Multibranch Pipeline
 - Connect GitHub repository
 - Add credentials: GitHub PAT and Docker Hub (optional)
 
-#### 3. Trigger Pipeline
+##### 3. Trigger Pipeline
 
 - Push code to repository OR
 - Trigger manually in Jenkins
 
-### 📊 What I Built
+#### 📊 What I Built
 
 I created a CI/CD pipeline that:
 
@@ -167,7 +175,7 @@ I created a CI/CD pipeline that:
 - Tags images for traceability
 - Integrates GitHub with Jenkins using webhooks
 
-### 📌 Project Summary (In a Nutshell)
+#### 📌 Project Summary (In a Nutshell)
 
 This project demonstrates a real-world CI/CD pipeline using Jenkins that automates building, versioning, and containerizing a Java application.
 
@@ -179,7 +187,7 @@ It highlights core DevOps practices:
 - Containerization
 - Troubleshooting production-like issues
 
-### 🔮 Next Improvements (Roadmap)
+#### 🔮 Next Improvements (Roadmap)
 
 - Push images to AWS ECR
 - Deploy to Kubernetes (EKS)
