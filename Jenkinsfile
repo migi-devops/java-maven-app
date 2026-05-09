@@ -34,15 +34,15 @@ pipeline {
             steps {
                 script {
                     echo "building the docker image..."
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]){
-                        sh "docker build -t miguelprint/demo-app:${IMAGE_NAME} ."
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                        sh "docker build -t miguelprint/demo-app:${IMAGE_NAME} -t miguelprint/demo-app:1.0 ."
                         sh 'echo $PASS | docker login -u $USER --password-stdin'
                         sh "docker push miguelprint/demo-app:${IMAGE_NAME}"
+                        sh "docker push miguelprint/demo-app:1.0"
                     }
                 }
             }
         }
-
         stage('deploy') {
             steps {
                 script {
