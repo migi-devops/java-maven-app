@@ -5,4 +5,4 @@ EXPOSE 8080
 COPY ./target/java-maven-app-*.jar /usr/app/
 WORKDIR /usr/app
 
-CMD jave -jar jave-maven-app-*.jar
+CMD jave -jar java-maven-app-*.jar
