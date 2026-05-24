@@ -308,22 +308,6 @@ The implementation provided additional hands-on experience with multi-applicatio
 
 ---
 
-#### ☁️ Cloud Readiness
-
-Although this implementation runs primarily in a local Jenkins environment, the architecture aligns directly with modern AWS deployment workflows.
-
-The same CI/CD design can later integrate with:
-
-- Amazon EC2
-- Amazon ECR
-- Amazon EKS
-- AWS CodePipeline
-- IAM-based authentication
-
-This project later evolved into a more advanced AWS deployment pipeline involving remote EC2 deployments and Docker registry integration.
-
----
-
 #### 🔗 Related Project
 
 This CI/CD implementation later evolved into a production-style AWS deployment pipeline involving:
