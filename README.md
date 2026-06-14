@@ -112,6 +112,10 @@ java-maven-app/
 
 #### 1️⃣ Source Control Integration
 
+#### Successful Pipeline Execution
+
+<img src="assets/pipeline/pipeline-successful-jenkins-stage-view.png" width="700">
+
 - GitHub repository connected to Jenkins Multibranch Pipeline
 - Automatic pipeline execution through GitHub webhooks
 - Branch isolation used for safer pipeline testing
@@ -227,6 +231,8 @@ The implementation intentionally documents production-style issues encountered d
 
 The Jenkins pipeline entered a recursive execution loop where builds continuously triggered themselves.
 
+<img src="assets/troubleshooting/troubleshooting-recursive-pipeline-build-loop.png" width="700">
+
 #### Impact
 
 This caused:
@@ -267,6 +273,8 @@ The pipeline was stabilized by:
 - Improving pipeline execution flow
 
 Docker cleanup operations included:
+
+<img src="assets/recovery/recovery-docker-image-cleanup.png" width="700">
 
 ```bash
 docker system prune
